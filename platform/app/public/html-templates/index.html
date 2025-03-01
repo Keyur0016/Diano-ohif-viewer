@@ -28,7 +28,7 @@
     />
     <meta
       name="apple-mobile-web-app-title"
-      content="@ohif/app"
+      content="Cloudimts Viewer"
     />
     <meta
       name="msapplication-TileColor"
@@ -43,7 +43,13 @@
       href="<%= PUBLIC_URL %>manifest.json"
     />
     <link
+      rel="icon"
+      type="image/jpeg"
+      href="https://res.cloudinary.com/dryhptx96/image/upload/v1715699852/cloudimts_evortl.jpg"
+    />
+    <link
       rel="shortcut icon"
+      type="image/jpeg"
       href="https://res.cloudinary.com/dryhptx96/image/upload/v1715699852/cloudimts_evortl.jpg"
     />
     <link
@@ -61,24 +67,24 @@
       type="text/javascript"
       src="<%= PUBLIC_URL %>app-config.js"
     ></script>
-    <script
-      rel="preload"
-      as="script"
-      type="module"
-      src="<%= PUBLIC_URL %>init-service-worker.js"
-    ></script>
-    <title>Cloudimts</title>
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Inter:100,300,400,500,700&display=swap"
-      rel="stylesheet"
-      rel="preload"
-      as="style"
-    />
+      <script
+        rel="preload"
+        as="script"
+        type="module"
+        src="<%= PUBLIC_URL %>init-service-worker.js"
+      ></script>
+      <title>Cloudimts</title>
+      <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+      />
+      <link
+        href="https://fonts.googleapis.com/css?family=Inter:100,300,400,500,700&display=swap"
+        rel="stylesheet"
+        rel="preload"
+        as="style"
+      />
 
     <!-- EXTENSIONS -->
     <!-- <script type="text/javascript" src="path/to/some-extension.js"></script>
@@ -108,6 +114,45 @@
           width: 98vw !important;
           height: fit-content !important;
         }
+
+        .items-start{
+          display: none !important;
+        }
+
+        .ohif-thumbnail-viewes-list{
+          display: flex !important ;
+          overflow-x: auto !important;
+          height: fit-content !important ;
+        }
+
+        .thumbnail-image-class{
+          height: 270px !important ;
+          width: 97vw !important ;
+        }
+
+        .thumbnail-image{
+          height: 270px !important ;
+          width: 97vw !important ;
+        }
+
+        .dicom-image-viewer-main-div{
+          width: 96vw !important ;
+          margin-left: auto !important ;
+          margin-right: auto !important ;
+        }
+
+        .dicom-image-viewer-option-menu-div{
+          display: none !important ;
+        }
+
+        .recent-all-option-menu-list{
+          display: none !important ;
+        }
+      }
+
+      .cloudimts-icon{
+        height: 40px ;
+        width: 40px ;
       }
     </style>
   </head>

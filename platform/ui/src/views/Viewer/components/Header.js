@@ -7,23 +7,16 @@ const Header = () => {
       <div className="flex flex-1 justify-between">
         <div className="flex items-center">
           <div className="mr-3 inline-flex items-center">
-            <Icon
+            {/* <Icon
               name="chevron-left"
               className="text-primary-active w-8 cursor-pointer"
               onClick={() => alert('Navigate to previous page')}
-            />
-            <a
-              href="#"
-              className="ml-4"
-            >
-              <Svg name="logo-ohif" />
+            /> */}
+            <a href="#" className="ml-4">
+              <img src="https://res.cloudinary.com/dryhptx96/image/upload/v1715699852/cloudimts_evortl.jpg" className="cloudimts-icon" alt="OHIF Logo" />
             </a>
-          </div>
         </div>
-        <div className="flex items-center">
-          {/* <Toolbar tools={tools} activeTool={activeTool} moreTools={tools} /> */}
-        </div>
-        <div className="flex items-center">
+        {/* <div className="flex items-center">
           <span className="text-common-light mr-3 text-lg">FOR INVESTIGATIONAL USE ONLY</span>
           <IconButton
             variant="text"
@@ -35,7 +28,7 @@ const Header = () => {
               <Icon name="settings" /> <Icon name="chevron-down" />
             </React.Fragment>
           </IconButton>
-        </div>
+        </div> */}
       </div>
     </NavBar>
   );
