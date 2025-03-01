@@ -37,7 +37,7 @@ function Header({
         <div className="flex items-center">
           {/* // TODO: Should preserve filter/sort
               // Either injected service? Or context (like react router's `useLocation`?) */}
-          <div
+          {/* <div
             className={classNames(
               'mr-3 inline-flex items-center',
               isReturnEnabled && 'cursor-pointer'
@@ -54,12 +54,14 @@ function Header({
             <div className="ml-4">
               {WhiteLabeling?.createLogoComponentFn?.(React, props) || <Svg name="logo-ohif" />}
             </div>
-          </div>
+          </div> */}
+          <a href="#" className="ml-4">
+              <img src="https://res.cloudinary.com/dryhptx96/image/upload/v1715699852/cloudimts_evortl.jpg" className="cloudimts-icon" alt="OHIF Logo" />
+            </a>
         </div>
-        <div className="flex items-center">{children}</div>
+        <div className="flex items-center dicom-image-viewer-option-menu-div">{children}</div>
         <div className="flex items-center">
-          <span className="text-common-light mr-3 text-lg">{t('INVESTIGATIONAL USE ONLY')}</span>
-          <Dropdown
+          {/* <Dropdown
             id="options"
             showDropdownIcon={false}
             list={menuOptions}
@@ -83,7 +85,7 @@ function Header({
             >
               <Icon name="chevron-down" />
             </IconButton>
-          </Dropdown>
+          </Dropdown> */}
         </div>
       </div>
     </NavBar>
