@@ -1,4 +1,4 @@
-window.config = {
+xwindow.config = {
   routerBasename: '/',
   showStudyList: true,
   // below flag is for performance reasons, but it might not work for all servers
@@ -10,9 +10,9 @@ window.config = {
     dicomWeb: [
       {
         name: 'aws',
-        wadoUriRoot: 'https://d33do7qe4w26qo.cloudfront.net/dicomweb',
-        qidoRoot: 'https://d33do7qe4w26qo.cloudfront.net/dicomweb',
-        wadoRoot: 'https://d33do7qe4w26qo.cloudfront.net/dicomweb',
+        wadoUriRoot: 'https://viewer.cloudimts.com/dicomweb',
+        qidoRoot: 'https://viewer.cloudimts.com/dicomweb',
+        wadoRoot: 'https://viewer.cloudimts.com/dicomweb',
         qidoSupportsIncludeField: true,
         imageRendering: 'wadors',
         thumbnailRendering: 'wadors',
