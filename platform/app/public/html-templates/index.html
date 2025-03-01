@@ -97,6 +97,22 @@
         };
       };
     </script> -->
+
+    <style>
+      @media only screen and (max-width: 600px) {
+        .items-stretch  {
+          overflow-y: auto !important;
+          display: block !important;
+          height: 64vh !important;
+        }
+
+        .items-stretch > div:first-child {
+          max-width: 98vw !important;
+          width: 98vw !important;
+          height: fit-content !important;
+        }
+      }
+    </style>
   </head>
 
   <body>
