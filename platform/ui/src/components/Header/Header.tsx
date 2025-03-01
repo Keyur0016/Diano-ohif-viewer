@@ -55,9 +55,9 @@ function Header({
               {WhiteLabeling?.createLogoComponentFn?.(React, props) || <Svg name="logo-ohif" />}
             </div>
           </div> */}
-          <a href="#" className="ml-4">
-              <img src="https://res.cloudinary.com/dryhptx96/image/upload/v1715699852/cloudimts_evortl.jpg" className="cloudimts-icon" alt="OHIF Logo" />
-            </a>
+          <div className = "cloudimts-title">
+            Cloudimts
+          </div>
         </div>
         <div className="flex items-center dicom-image-viewer-option-menu-div">{children}</div>
         <div className="flex items-center">
