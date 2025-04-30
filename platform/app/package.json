@@ -98,6 +98,7 @@
     "cross-env": "^7.0.3",
     "cypress": "^13.2.0",
     "cypress-file-upload": "^3.5.3",
+    "dotenv": "^16.5.0",
     "glob": "^8.0.3",
     "identity-obj-proxy": "3.0.x",
     "lodash": "^4.17.21",
