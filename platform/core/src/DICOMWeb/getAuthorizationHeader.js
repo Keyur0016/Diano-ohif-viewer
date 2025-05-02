@@ -16,6 +16,8 @@ export default function getAuthorizationHeader({ requestOptions } = {}, user) {
   // Check for OHIF.user since this can also be run on the server
   const accessToken = user && user.getAccessToken && user.getAccessToken();
 
+  console.log("Run  this authorization header related functionality")
+
   // Auth for a specific server
   if (requestOptions && requestOptions.auth) {
     if (typeof requestOptions.auth === 'function') {
@@ -26,10 +28,10 @@ export default function getAuthorizationHeader({ requestOptions } = {}, user) {
       headers.Authorization = `Basic ${btoa(requestOptions.auth)}`;
     }
   }
+
   // Auth for the user's default
   else if (accessToken) {
     headers.Authorization = `Bearer ${accessToken}`;
   }
-
   return headers;
 }

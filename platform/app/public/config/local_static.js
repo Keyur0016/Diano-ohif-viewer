@@ -92,9 +92,9 @@ window.config = {
       configuration: {
         friendlyName: 'AWS S3 Static wado server',
         name: 'aws',
-        wadoUriRoot: 'https://viewer.cloudimts.com/dicomweb',
-        qidoRoot: 'https://viewer.cloudimts.com/dicomweb',
-        wadoRoot: 'https://viewer.cloudimts.com/dicomweb',
+        wadoUriRoot: 'http://54.235.79.112:8042/dicomweb',
+        qidoRoot: 'http://54.235.79.112:8042/dicomweb',
+        wadoRoot: 'http://54.235.79.112:8042/dicomweb',
         qidoSupportsIncludeField: false,
         imageRendering: 'wadors',
         thumbnailRendering: 'wadors',
