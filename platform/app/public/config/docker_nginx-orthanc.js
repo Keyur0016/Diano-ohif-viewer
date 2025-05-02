@@ -17,12 +17,15 @@ window.config = {
         friendlyName: 'Orthanc Server',
         name: 'Orthanc',
         wadoUriRoot: '/wado',
-        qidoRoot: '/dicom-web',
-        wadoRoot: '/dicom-web',
+        qidoRoot: 'http://54.235.79.112:8042/dicom-web',
+        wadoRoot: 'http://54.235.79.112:8042/dicom-web',
         qidoSupportsIncludeField: false,
         imageRendering: 'wadors',
         thumbnailRendering: 'wadors',
         omitQuotationForMultipartRequest: true,
+        requestOptions: {
+          auth: 'orthanc_username:orthanc_password',
+        },
       },
     },
     {

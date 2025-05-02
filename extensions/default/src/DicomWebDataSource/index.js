@@ -1,5 +1,5 @@
 import { api } from 'dicomweb-client';
-import { DicomMetadataStore, IWebApiDataSource, utils, errorHandler, classes } from '@ohif/core';
+import { DicomMetadataStore, IWebApiDataSource, utils, errorHandler, classes, log } from '@ohif/core';
 
 import {
   mapParams,
@@ -60,14 +60,23 @@ function createDicomWebApi(dicomWebConfig, userAuthenticationService) {
 
       dicomWebConfigCopy = JSON.parse(JSON.stringify(dicomWebConfig));
 
-      getAuthrorizationHeader = () => {
-        const xhrRequestHeaders = {};
-        const authHeaders = userAuthenticationService.getAuthorizationHeader();
-        if (authHeaders && authHeaders.Authorization) {
-          xhrRequestHeaders.Authorization = authHeaders.Authorization;
-        }
-        return xhrRequestHeaders;
-      };
+      // getAuthrorizationHeader = () => {
+      //   console.log("Run this autorization header function");
+
+      //   const xhrRequestHeaders = {};
+      //   const authHeaders = userAuthenticationService.getAuthorizationHeader();
+      //   if (authHeaders && authHeaders.Authorization) {
+      //     xhrRequestHeaders.Authorization = authHeaders.Authorization;
+      //   }
+      //   return xhrRequestHeaders;
+      // };
+
+      const basicAuth = 'Basic ' + btoa('omfradiology:omfradiology@1234'); // Replace with actual credentials
+
+      getAuthrorizationHeader = () => ({
+        Authorization: basicAuth,
+      });
+
 
       generateWadoHeader = () => {
         let authorizationHeader = getAuthrorizationHeader();
@@ -88,7 +97,7 @@ function createDicomWebApi(dicomWebConfig, userAuthenticationService) {
         url: dicomWebConfig.qidoRoot,
         staticWado: dicomWebConfig.staticWado,
         singlepart: dicomWebConfig.singlepart,
-        headers: userAuthenticationService.getAuthorizationHeader(),
+        headers: getAuthrorizationHeader(),
         errorInterceptor: errorHandler.getHTTPErrorHandler(),
       };
 
@@ -96,7 +105,7 @@ function createDicomWebApi(dicomWebConfig, userAuthenticationService) {
         url: dicomWebConfig.wadoRoot,
         staticWado: dicomWebConfig.staticWado,
         singlepart: dicomWebConfig.singlepart,
-        headers: userAuthenticationService.getAuthorizationHeader(),
+        headers: getAuthrorizationHeader(),
         errorInterceptor: errorHandler.getHTTPErrorHandler(),
       };
 
@@ -502,6 +511,9 @@ function createDicomWebApi(dicomWebConfig, userAuthenticationService) {
   if (dicomWebConfig.supportsReject) {
     implementation.reject = dcm4cheeReject(dicomWebConfig.wadoRoot);
   }
+
+  console.log("Create dicom web api client object ------------");
+
 
   return IWebApiDataSource.create(implementation);
 }

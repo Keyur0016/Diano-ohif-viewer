@@ -9,6 +9,7 @@ function buildInstanceWadoUrl(config, instance) {
   params.push(`seriesUID=${SeriesInstanceUID}`);
   params.push(`objectUID=${SOPInstanceUID}`);
   params.push('contentType=application/dicom');
+  params.push("Authorization=Keyur")
   params.push('transferSyntax=*');
 
   const paramString = params.join('&');

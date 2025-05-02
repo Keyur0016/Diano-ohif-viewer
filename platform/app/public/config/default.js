@@ -58,6 +58,11 @@ window.config = {
           relativeResolution: 'studies',
         },
         omitQuotationForMultipartRequest: true,
+        requestOptions: {
+          requestHeaders: {
+            Authorization: 'Basic b3J0aGFuYzpvcnRoYW5j', // Replace with your own encoded value
+          },
+        },
       },
     },
     {
@@ -86,6 +91,11 @@ window.config = {
           relativeResolution: 'studies',
         },
         omitQuotationForMultipartRequest: true,
+        requestOptions: {
+          requestHeaders: {
+            Authorization: 'Basic b3J0aGFuYzpvcnRoYW5j', // Replace with your own encoded value
+          },
+        },
       },
     },
     {

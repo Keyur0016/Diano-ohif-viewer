@@ -16,7 +16,9 @@ export default function getAuthorizationHeader({ requestOptions } = {}, user) {
   // Check for OHIF.user since this can also be run on the server
   const accessToken = user && user.getAccessToken && user.getAccessToken();
 
-  console.log("Run  this authorization header related functionality")
+  console.log("✅ getAuthorizationHeader CALLED");
+  console.log("requestOptions:", requestOptions);
+  console.log("accessToken:", accessToken);
 
   // Auth for a specific server
   if (requestOptions && requestOptions.auth) {

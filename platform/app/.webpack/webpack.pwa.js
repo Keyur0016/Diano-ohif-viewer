@@ -19,7 +19,7 @@ const HTML_TEMPLATE = process.env.HTML_TEMPLATE || 'index.html';
 const PUBLIC_URL = process.env.PUBLIC_URL || '/';
 const APP_CONFIG = process.env.APP_CONFIG || 'config/default.js';
 const PROXY_TARGET = process.env.PROXY_TARGET;
-const PROXY_DOMAIN = process.env.PROXY_DOMAIN;
+const PROXY_DOMAIN = "http://127.0.0.1:3000";
 const ENTRY_TARGET = process.env.ENTRY_TARGET || `${SRC_DIR}/index.js`;
 const Dotenv = require('dotenv-webpack');
 const writePluginImportFile = require('./writePluginImportsFile.js');
@@ -38,6 +38,7 @@ const setHeaders = (res, path) => {
     res.setHeader('Content-Type', 'multipart/related');
   } else {
     res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Content-Type12', 'application/json');
   }
 };
 
@@ -148,7 +149,7 @@ module.exports = (env, argv) => {
         overlay: { errors: true, warnings: false },
       },
       proxy: {
-        '/dicomweb': 'http://localhost:5000',
+        '/dicom-web': 'http://localhost:3000',
       },
       static: [
         {
@@ -176,7 +177,7 @@ module.exports = (env, argv) => {
 
   if (hasProxy) {
     mergedConfig.devServer.proxy = mergedConfig.devServer.proxy || {};
-    mergedConfig.devServer.proxy[PROXY_TARGET] = PROXY_DOMAIN;
+    mergedConfig.devServer.proxy[PROXY_TARGET] = "http://127.0.0.1:3000";
   }
 
   if (isProdBuild) {
