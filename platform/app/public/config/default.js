@@ -39,9 +39,9 @@ window.config = {
       configuration: {
         friendlyName: 'AWS S3 Static wado server',
         name: 'aws',
-        wadoUriRoot: 'https://orthanc.diagnoshare.com/dicom-web',
-        qidoRoot: 'https://orthanc.diagnoshare.com/dicom-web',
-        wadoRoot: 'https://orthanc.diagnoshare.com/dicom-web',
+        wadoUriRoot: 'http://54.235.79.112:8090/dicom-web',
+        qidoRoot: 'http://54.235.79.112:8090/dicom-web',
+        wadoRoot: 'http://54.235.79.112:8090/dicom-web',
         qidoSupportsIncludeField: false,
         imageRendering: 'wadors',
         thumbnailRendering: 'wadors',
@@ -71,9 +71,9 @@ window.config = {
       configuration: {
         friendlyName: 'AWS S3 Static wado secondary server',
         name: 'aws',
-        wadoUriRoot: 'https://orthanc.diagnoshare.com/dicom-web',
-        qidoRoot: 'https://orthanc.diagnoshare.com/dicom-web',
-        wadoRoot: 'https://orthanc.diagnoshare.com/dicom-web',
+        wadoUriRoot: 'http://54.235.79.112:8090/dicom-web',
+        qidoRoot: 'http://54.235.79.112:8090/dicom-web',
+        wadoRoot: 'http://54.235.79.112:8090/dicom-web',
         qidoSupportsIncludeField: false,
         supportsReject: false,
         imageRendering: 'wadors',
@@ -83,9 +83,6 @@ window.config = {
         supportsWildcard: true,
         staticWado: true,
         singlepart: 'bulkdata,video',
-        // whether the data source should use retrieveBulkData to grab metadata,
-        // and in case of relative path, what would it be relative to, options
-        // are in the series level or study level (some servers like series some study)
         bulkDataURI: {
           enabled: true,
           relativeResolution: 'studies',

@@ -27,9 +27,6 @@ window.config = {
         imageRendering: 'wadors',
         enableStudyLazyLoad: true,
         thumbnailRendering: 'wadors',
-        requestOptions: {
-          auth: 'admin:admin',
-        },
         dicomUploadEnabled: true,
         singlepart: 'pdf,video',
         // whether the data source should use retrieveBulkData to grab metadata,
